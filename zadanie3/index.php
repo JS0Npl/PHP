@@ -35,17 +35,4 @@ if (isset($_POST['submit'])) {
         echo "<p>Incorrect password or login.</p>";
     }
 }
-
-if (isset($_GET['submit'])) {
-    if($_GET['username'] === "admin") {
-        if($_GET['password'] === "test") {
-            echo "Witaj, ".$_GET['username'];
-        }
-        else {
-            echo "<p> Incorrect password! <p>";
-        }
-    } else {
-        echo"<p> Incorrect username! <p>";
-    }
-}
 ?>
