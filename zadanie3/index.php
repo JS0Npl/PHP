@@ -57,9 +57,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if($stmt->num_rows == 1) {
-        session_start();
-        $_SESSION['username'] = $username;
-        header("location: index.php");
+        echo "Welcome".$_POST['username']."!";
     } else {
         echo "Wrong username or password";
     }
