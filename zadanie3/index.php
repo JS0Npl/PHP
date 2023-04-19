@@ -42,14 +42,11 @@ if (isset($_POST['submit'])) {
 $db = new mysqli("localhost", "root", "", "base");
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
     $query = "SELECT * FROM users WHERE username = ? AND password = ?";
 
     $stmt = $db->prepare($query);
 
-    $stmt->bind_param("ss", $username, $password);
+    $stmt->bind_param("ss", $_POST['username'], $_POST['password']);
 
     $stmt->execute();
 
